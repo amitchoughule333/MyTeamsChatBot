@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyTeamsChatBot", "MyTeamsChatBot\MyTeamsChatBot.csproj", "{852A9754-1BEF-4D03-BFFA-F65525EA990C}"
+EndProject
+Project("{A9E3F50B-275E-4AF7-ADCE-8BE12D41E305}") = "TeamsApp", "TeamsApp\TeamsApp.ttkproj", "{92365D19-7CC4-4A9E-ADF2-3FA3E4DF6481}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{852A9754-1BEF-4D03-BFFA-F65525EA990C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852A9754-1BEF-4D03-BFFA-F65525EA990C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852A9754-1BEF-4D03-BFFA-F65525EA990C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852A9754-1BEF-4D03-BFFA-F65525EA990C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92365D19-7CC4-4A9E-ADF2-3FA3E4DF6481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92365D19-7CC4-4A9E-ADF2-3FA3E4DF6481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92365D19-7CC4-4A9E-ADF2-3FA3E4DF6481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92365D19-7CC4-4A9E-ADF2-3FA3E4DF6481}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F9A13D0-DD2A-4F66-96EF-44872D86B65D}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,175 @@
+﻿@model string
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- refer css file -->
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="
+        https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <title>File Upload</title>
+    <link href="/css/upload.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+    .content {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        justify-content: space-between;
+        padding:20px;
+        height: 125px; /* Set a fixed height for the content div */
+    }
+    #fileInput {
+        margin-bottom: 10px;
+       
+    }
+
+    #uploadBtn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        #uploadBtn:hover {
+            background-color: #0056b3;
+        }
+
+   
+
+    .button-container-upload {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Style for the buttons */
+    #uploadBtn, .cancel-button {
+        margin-left: 10px;
+    }
+</style>
+<body onload="">
+    <div id="mySidenav" class="sidenav sidebar">
+        @* <div class="closebtnsec">
+            <button onclick="toggleNav()">&times;</button>
+        </div> *@
+        <div class="logIcon">
+            <div>
+                <img src="/icons/Home.png" alt="Home" onclick="goToChatPage()" />
+            </div>
+            <div>
+                <img src="/icons/Georgia-Pacific-logo-scaled.png" alt="Avatar" width="176px" height="32px" />
+            </div>
+            <div class="clr"></div>
+
+        </div>
+        @if (Model == "permit-parsing")
+        {
+            <div class="fw-bolder text-center">Permit Parsing</div>
+        }
+        else if (Model == "permit-comparision")
+        {
+            <div class="fw-bolder text-center">Permit Comparision</div>
+        }
+        else
+        {
+            throw new ArgumentException("Invalid screenType.");
+        }
+        <div class="outer-div ">
+            <div class="sidenav-bottom-icon">
+                <p><img src="/icons/Helpmuted.svg" alt="Helpmuted" /> Help</p>
+                <p><img src="/icons/Setings.svg" alt="Setings" /> Settings </p>
+            </div>
+            <div class="btmsidebar">
+                <div class="knowledge-logo">
+                    <h3>Powered by</h3>
+                    <div class="botmlogo"><img src="/icons/Logo Knowledge navigator.png" alt="Logo Knowledge navigator"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-12 col-sm-12 full-height main-content">
+                    <div class="topheader">
+                        <!--topheader-->
+                        @* <button style="font-size: 30px; cursor: pointer" onclick="toggleNav()">
+                            &#9776;
+                        </button> *@
+
+                        <div id="loggedin">
+                            <strong id="login_initials">JD</strong>
+
+                            <div class="menubar">
+                                <ul>
+                                    <li id="logoutbtn" onclick="onLogoutClick()">Logout</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clr"></div>
+                    </div>
+                    <!--end topheader-->
+                    <div class="midsec fileUpload">
+                        <!--File Upload-->
+                        <div class="content">
+                            <input type="file" id="fileInput" multiple>
+                            <div class="button-container-upload">
+                                <button id="uploadBtn">Upload</button>
+                                <button type="button" class="btn btn-secondary cancel-button" onclick="cancelUpload()">Cancel</button>
+                            </div>
+                        </div>
+                        <div id="fileList"></div>
+                        <div id="modal" class="modal-container">
+                            <div class="modal-content">
+
+                                <h2>Delete Confirmation</h2>
+                                
+                                <p id="clicked-file" class="confirmation-message"></p>
+                                <p class="confirmation-message">
+                                    Are you sure you want to delete this item?
+                                </p>
+
+                                <div class="button-container">
+                                    <button id="cancelBtn"
+                                            class="button cancel-button">
+                                        Cancel
+                                    </button>
+                                    <button id="deleteBtn"
+                                            class="button delete-button">
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+           function cancelUpload() {
+        // Get the file input element
+        const fileInput = document.getElementById("fileInput");
+        
+        // Clear the value of the file input element
+        fileInput.value = "";
+    }
+        </script>
+        <script src="/js/upload.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        const sessionStorageKey = "permit-parsing";
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- refer css file -->
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Chat Home</title>
+    <script src="https://unpkg.com/@@lottiefiles/lottie-player@@latest/dist/lottie-player.js"></script>
+    <script src="
+        https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
+    <title>Home</title>
+</head>
+
+<body onload="">
+    <div id="mySidenav" class="sidenav sidebar">
+        @* <div class="closebtnsec">
+            <button onclick="toggleNav()">&times;</button>
+        </div> *@
+        <div class="logIcon">
+            <div>
+                <img src="/icons/Home.png" alt="Home" onclick="goToHomePage()" />
+            </div>
+            <div>
+                <img src="/icons/Georgia-Pacific-logo-scaled.png" alt="Avatar" width="176px" height="32px" />
+            </div>
+            <div class="clr"></div>
+        </div>
+        <button class="newchat"><strong>New Chat</strong></button>
+        <div class="fw-bolder text-center pt-3 fs-2">Permit Parsing</div>
+        <hr class="hr-warning" />
+
+        <div class="list-container">
+            <ul id="questionsList"></ul>
+        </div>
+
+
+        <div class="outer-div ">
+            <div class="sidenav-bottom-icon">
+                @* <p onclick="goToUploadpage('permit-parsing');" style="cursor: pointer;"><img src="/icons/upload.png" alt="Uploadmuted" height="16px" /> Upload</p> *@
+                <p><img src="/icons/Helpmuted.svg" alt="Helpmuted" /> Help</p>
+                <p><img src="/icons/Setings.svg" alt="Setings" /> Settings </p>
+            </div>
+            <div class="btmsidebar">
+                <div class="knowledge-logo">
+                    <h3>Powered by</h3>
+                    <div class="botmlogo"><img src="/icons/Logo Knowledge navigator.png" alt="Logo Knowledge navigator"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-12 col-sm-12 full-height main-content"
+                     id="main-content">
+                    <div class="topheader">
+                        <!--topheader-->
+                        @* <button style="font-size: 30px; cursor: pointer"
+                                onclick="toggleNav()">
+                            &#9776;
+                        </button> *@
+
+                        <div id="loggedin">
+                            <strong id="login_initials">JD</strong>
+                            <div class="menubar">
+                                <ul>
+                                    <li id="logoutbtn" onclick="onLogoutClick()">Logout</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clr"></div>
+                    </div>
+                    <!--end topheader-->
+
+                    <div class="text-tile">
+                        Ask a question regarding Permit Parsing
+                    </div>
+                    <div class="flex-containerforToday">
+                        <div class="today-tag">
+                            Today
+                        </div>
+                    </div>
+
+                    <div class="intro_msg">
+                        <div class="animation_container">
+                            <lottie-player src="/Animation/Animation.json"
+                                           background="transparent"
+                                           speed="1"
+                                           style="width: 180px; height: 180px"
+                                           loop
+                                           autoplay></lottie-player>
+                        </div>
+                        <h2>How can I help you today?</h2>
+                    </div>
+                    <div id="chatbotContainer">
+                        <div id="chatbotQuestion"></div>
+
+                        <div id="chatbotResponse"></div>
+                    </div>
+
+                    <div class="chatinput">
+                        <input class="form-control"
+                               type="text"
+                               id="question"
+                               placeholder="Ask Here..."
+                               oninput="toggleSendButton()"
+                               onkeypress="handleKeyPressPermitParsing(event)" />
+                        <button id="askQuestion" onclick="permitParsingClicked()">
+                            <img src="/icons/sent.png" />
+                        </button>
+                        @* <div>
+                        <input type="file" name="file" id="fileInput" />
+                        <button onclick="uploadFileToBlob()">Upload File</button>
+                        </div> *@
+                        <div class="main-container" id="modal">
+                            <div class="modal-content">
+                                <form class="feedback-form" id="feedback-form">
+                                    <div class="form-header">
+                                        <p>Submit Feedback</p>
+                                        <button id="cancelBtn">X</button>
+                                    </div>
+                                    <div class="form-body">
+                                        <p>Your feedback will improve this experience.</p>
+                                        <p>Why wasn't this response helpful?</p>
+                                        <div class="checkbox-list">
+                                            <input type="checkbox" id="citations-missing" name="citations-missing"
+                                                   value="Citations are missing">
+                                            <label for="citations-missing"> Citations are missing</label><br>
+
+                                            <input type="checkbox" id="citations-wrong" name="citations-wrong" value="Citations are wrong">
+                                            <label for="citations-wrong"> Citations are wrong</label><br>
+
+                                            <input type="checkbox" id="response-not-from-data" name="response-not-from-data"
+                                                   value="The response is not from my data">
+                                            <label for="response-not-from-data"> The response is not from my data</label><br>
+
+                                            <input type="checkbox" id="inaccurate-irrelevant" name="inaccurate-irrelevant"
+                                                   value="Inaccurate or irrelevant">
+                                            <label for="inaccurate-irrelevant"> Inaccurate or irrelevant</label><br>
+
+                                            <input type="checkbox" id="other" name="other" value="Other">
+                                            <label for="other"> Other</label>
+                                        </div>
+                                        <p><a href="#" style="text-decoration:none;">Report inappropriate content</a></p>
+                                        <p>By pressing submit, your feedback will be visible to the application owner.</p>
+                                        <input type="submit" value="Submit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    </>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="rightsidebar" class="sidebar">
+        <button id="expandpdf" title="Expand"><i class="bi bi-arrows-angle-expand"></i></button>
+        <h2>Permit Source Reference</h2>
+        <div class="file-name">
+            Taylorsville finalp1671979.pdf
+        </div>
+        <div class="dynamicwrapper">
+        <div class="pdf-rng">
+            <i class="bi bi-zoom-out"></i><input type="range" class="pdf-inp-rng" id="pdf-inp-rng" min="0.6" max="2" value="0.6" step="0.1" /><i class="bi bi-zoom-in"></i>
+        </div>
+        <div class="prnt-pdf-container" id="prnt-pdf-container">
+            <div class="pdf-container" id="pdf-container"></div>
+        </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script src="/js/permitparsing.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="/css/rightsidebar.css" rel="stylesheet" />
+    <script src="/js/expandpdfsection.js"></script>
+    
+
+</body>
+</html>

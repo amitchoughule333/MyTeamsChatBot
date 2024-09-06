@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Help_muted" data-name="Help muted" transform="translate(-111 -1050)">
+    <rect id="Rectangle_262" data-name="Rectangle 262" width="24" height="24" transform="translate(111 1050)" fill="none"/>
+    <path id="Path_275" data-name="Path 275" d="M2.736-4.549h1.4v-.413c0-.7.251-1.056,1.124-1.571A2.588,2.588,0,0,0,6.684-8.849v-.014c0-1.442-1.205-2.505-2.993-2.505A2.758,2.758,0,0,0,.617-8.673v.014l1.395-.007h.014a1.471,1.471,0,0,1,1.591-1.456A1.37,1.37,0,0,1,5.147-8.8v.014c0,.691-.291,1.083-1.11,1.578A2.2,2.2,0,0,0,2.73-5.091Zm.785,3.182A.972.972,0,0,0,4.564-2.376.974.974,0,0,0,3.522-3.392.979.979,0,0,0,2.472-2.376.978.978,0,0,0,3.522-1.367Z" transform="translate(119.35 1068.367)" fill="#fff"/>
+    <g id="Help-Question-1--Streamline-Core" transform="translate(114.304 1053.303)">
+      <path id="Vector" d="M8.7,16.7a8,8,0,1,0-8-8,8,8,0,0,0,8,8Z" fill="#d7e0ff"/>
+      <path id="Vector_2" d="M8.7,16.7a8,8,0,1,0-8-8,8,8,0,0,0,8,8Z" fill="#fff" stroke="#c1c4d6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector_3" d="M7.313,7.313A2.44,2.44,0,1,1,9.753,9.75v1.625" transform="translate(-1.054 -0.758)" fill="none" stroke="#c1c4d6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <g id="Group_2567" data-name="Group 2567" transform="translate(8.348 12.277)">
+        <path id="Vector_4" d="M9.75,14.568a.348.348,0,1,1,0-.7" transform="translate(-9.402 -13.871)" fill="none" stroke="#c1c4d6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <path id="Vector_5" d="M9.75,14.568a.348.348,0,1,0,0-.7" transform="translate(-9.402 -13.871)" fill="none" stroke="#c1c4d6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

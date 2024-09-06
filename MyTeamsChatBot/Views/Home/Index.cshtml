@@ -1,0 +1,99 @@
+﻿@{
+    string eCFRURL = ViewData["eCFRURL"] as string;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- refer css file -->
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="
+        https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <title>Home</title>
+</head>
+
+<body onload="">
+    <div id="mySidenav" class="sidenav sidebar">
+        @* <div class="closebtnsec"><button onclick="toggleNav()">&times;</button></div> *@
+        <div class="d-flex justify-content-center align-items-start logosec">
+            <img src="https://www.protossoft.com/wp-content/uploads/2024/05/Protos-logo@2x.png" alt="Avatar" width="176px" height="42px" />
+        </div>
+        <div class="outer-div ">
+            <div class="sidenav-bottom-icon">
+                <p><img src="/icons/Helpmuted.svg" alt="Helpmuted" /> Help</p>
+                <p><img src="/icons/Setings.svg" alt="Setings" /> Settings </p>
+            </div>
+            <div class="btmsidebar">
+                <div class="knowledge-logo">
+                    <h3>Powered by</h3>
+                    <div class="botmlogo"><img src="/icons/Logo Knowledge navigator.png" alt="Logo Knowledge navigator"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="patstyle1">
+        <div class="container-fluid">
+            <div class="row">
+                <!--<div class="col-md-2 col-2 col-sm-12 full-height d-flex justify-content-center align-items-start main-body ">
+                        <img src="/icons/georgia-pacific-logo-scaled.png" alt="avatar" width="111" height="103">
+                </div>-->
+
+                <div class="col-md-12 col-12 col-sm-12 full-height main-content">
+                    <div class="topheader">
+                        <!--topheader-->
+                        @* <button style="font-size: 30px; cursor: pointer" onclick="toggleNav()">
+                        &#9776;
+                        </button> *@
+
+                        <div id="loggedin">
+                            <strong id="login_initials">JD</strong>
+
+                            <div class="menubar">
+                                <ul>
+                                    <li id="logoutbtn" onclick="onLogoutClick()">Logout</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clr"></div>
+                    </div>
+                    <!--end topheader-->
+                    <div class="midsec">
+                        <h1 class="title-text">
+                            Hey <span id="login_username">John</span>,<br />
+                            Welcome back !
+                        </h1>
+                        <div class="tab-bar">
+                            <span>Environmental</span>
+                            <span>HR</span>
+                            <span>Compliance</span>
+                        </div>
+                        <ul class="specs">
+                            <li><a href="@eCFRURL">eCFR Title 40</a></li>
+                            @* <li><a href="@Url.Action("Index", "permitparsing")">Permit Parsing</a></li>
+                            <li><a href="@Url.Action("Index", "permitcomparison")">Permit Comparison</a></li> *@
+                            <li><a href="@Url.Action("Index", "chatbot")">Chatbot</a></li>
+                            <li><a href="@Url.Action("Index", "sqlchatbot")">SQL Chatbot</a></li>
+                            <li><a href="@Url.Action("Index", "downloadfile")">Download Excel File</a></li>
+                            <li><a href="@Url.Action("Index", "azurebot")">AWS</a></li>
+                            <!--<li><a href="#" class="disablepointer">Human Resources</a></li>
+                            <li><a href="#" class="disablepointer">Compliance</a></li>
+                            <li><a href="#" class="disablepointer">Legal</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+        <script src="/js/main.js"></script>
+
+</body>
+
+</html>

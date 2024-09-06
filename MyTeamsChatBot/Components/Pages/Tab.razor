@@ -1,0 +1,58 @@
+﻿@page "/"
+@page "/tab"
+@using MyTeamsChatBot.Components;
+@inject IJSRuntime JS
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+
+
+@code {
+
+
+    private string BaseUrl => Navigation.BaseUri;
+
+
+
+    private string Content = "";
+
+
+
+    protected override async Task OnInitializedAsync()
+
+    {
+
+
+
+        // string baseURL = string.Format(@"{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"));
+
+
+
+        // var content = BaseUrl; //await Http.GetStringAsync(BaseUrl+"/Home/Index");
+
+        // await JS.InvokeVoidAsync("document.getElementById('mvc-content').innerHTML = content");
+
+        Navigation.NavigateTo("/Home/Index", true);
+    }
+
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+
+    {
+
+        if (firstRender)
+
+        {
+
+            // This block runs only once after the initial render
+
+            // Content = await Http.GetStringAsync(BaseUrl+"/Home/Index");
+
+            // await JS.InvokeVoidAsync("document.getElementById('mvc-content').innerHTML = content");
+
+            // Console.WriteLine("Component rendered for the first time.");
+        }
+
+    }
+}
